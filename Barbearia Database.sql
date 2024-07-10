@@ -74,6 +74,7 @@ VALUES
     
 INSERT INTO Barbeiro(nome, cpf)
 VALUES
+	("Qualquer um", ""),
 	("Roberto", "53468754218"),
     ("Gleyson", "42157846235"),
     ("Neymar", "53157846821");
@@ -128,6 +129,8 @@ ON Agendamento.id = Agendamento_Outros.agendamento_id
 INNER JOIN Outros
 ON Agendamento_Outros.outros_id = Outros.id
 GROUP BY Agendamento.id;
+
+
 
 
 
