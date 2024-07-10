@@ -1,0 +1,39 @@
+CREATE DATABASE Barbearia;
+USE Barbearia;
+
+CREATE TABLE Cliente(
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    telefone VARCHAR(45) NOT NULL,
+    cpf VARCHAR(11) NOT NULL
+);
+
+CREATE TABLE Barbeiro(
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    cpf VARCHAR(11) NOT NULL
+);
+
+CREATE TABLE Agendamento(
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    data_hora DATETIME NOT NULL,
+    cliente_id INT NOT NULL,
+    barbeiro_id INT NOT NULL,
+    FOREIGN KEY (cliente_id) REFERENCES Cliente(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE,
+	FOREIGN KEY (barbeiro_id) REFERENCES Barbeiro(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE Servico(
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    preco FLOAT NOT NULL,
+    agendamento_id INT NOT NULL,
+    FOREIGN KEY (agendamento_id) REFERENCES Agendamento(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
