@@ -75,9 +75,9 @@ VALUES
 INSERT INTO Barbeiro(nome, cpf)
 VALUES
 	("Qualquer um", ""),
-	("Roberto", "53468754218"),
-    ("Gleyson", "42157846235"),
-    ("Neymar", "53157846821");
+	("Solaire", "53468754218"),
+    ("Siegmeyer", "42157846235"),
+    ("Patches", "53157846821");
     
 INSERT INTO Cabelo(nome, preco)
 VALUES
